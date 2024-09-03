@@ -1,19 +1,23 @@
 package com.example.jparemind1.domain;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import lombok.Builder;
+import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Table
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Data
-@NoArgsConstructor
-public class MyEntity {
+public class BookStore {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -21,9 +25,6 @@ public class MyEntity {
 
 	private String name;
 
-	@Builder
-	private MyEntity(Long id, String name) {
-		this.id = id;
-		this.name = name;
-	}
+	@OneToMany
+	private Set<Book> books = new HashSet<>();
 }

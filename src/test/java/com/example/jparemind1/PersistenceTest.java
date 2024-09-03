@@ -1,20 +1,22 @@
 package com.example.jparemind1;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import com.example.jparemind1.domain.MyEntity;
 import com.example.jparemind1.repository.MyEntityRepository;
 
 import jakarta.persistence.EntityManager;
 
-@SpringBootTest
+@DataJpaTest
+// 어플리케이션에서 설정한 DB를 그대로 사용, application.yml에 설정된 DB를 사용
+@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 class PersistenceTest {
 
 	@Autowired
@@ -43,7 +45,6 @@ class PersistenceTest {
 
 	@DisplayName("영속성 컨텍스트 테스트")
 	@Test
-	@Transactional
 	void persistenceTest() throws Exception {
 
 		// given
@@ -74,7 +75,7 @@ class PersistenceTest {
 		System.out.println("쓰기 지연으로 UPDATE 쿼리는 커밋 시점에 나감");
 		System.out.println("===============================");
 
-		System.out.println("======== 커밋 ==========");
+		System.out.println("======== DB 반영 ==========");
 		em.flush();
 		assertThat(myEntity1).isEqualTo(savedEntity1);
 		assertThat(myEntity2).isEqualTo(myEntity1);
