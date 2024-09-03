@@ -38,8 +38,6 @@ public class JpaTest3 {
 			.name("테스트북스토어")
 			.build();
 
-		bookStore.addBook(book);
-
 		bookRepository.save(book);
 		bookStoreRepository.save(bookStore);
 
