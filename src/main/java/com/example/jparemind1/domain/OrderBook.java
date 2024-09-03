@@ -4,9 +4,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AccessLevel;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -14,18 +15,20 @@ import lombok.NoArgsConstructor;
 @Table
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Data
-public class BookStore {
+public class OrderBook {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	private String name;
-	@Builder
-	public BookStore(final Long id, final String name) {
-		this.id = id;
-		this.name = name;
-	}
+	@ManyToOne
+	@JoinColumn(name = "orders_id")
+	private Orders orders;
 
+	@ManyToOne
+	@JoinColumn(name = "book_id")
+	private Book book;
+
+	private int quantity;
 
 }

@@ -8,6 +8,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -18,7 +19,7 @@ import lombok.NoArgsConstructor;
 public class Book {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	private String title;
@@ -28,5 +29,12 @@ public class Book {
 	@ManyToOne
 	@JoinColumn(name = "book_store_id")
 	private BookStore bookStore;
+
+	@Builder
+	public Book(final Long id, final String title, final String author) {
+		this.id = id;
+		this.title = title;
+		this.author = author;
+	}
 
 }
