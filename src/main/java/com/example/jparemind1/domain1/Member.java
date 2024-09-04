@@ -1,4 +1,4 @@
-package com.example.jparemind1.domain;
+package com.example.jparemind1.domain1;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

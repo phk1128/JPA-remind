@@ -1,4 +1,4 @@
-package com.example.jparemind1.domain;
+package com.example.jparemind1.domain1;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -6,10 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
-import com.example.jparemind1.domain.Member;
-import com.example.jparemind1.domain.Team;
-import com.example.jparemind1.repository.MemberRepository;
-import com.example.jparemind1.repository.TeamRepository;
+import com.example.jparemind1.domain1.Member;
+import com.example.jparemind1.domain1.Team;
+import com.example.jparemind1.repository1.MemberRepository;
+import com.example.jparemind1.repository1.TeamRepository;
 
 import jakarta.persistence.EntityManager;
 

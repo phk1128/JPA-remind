@@ -7,10 +7,10 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
-import com.example.jparemind1.domain.Card;
-import com.example.jparemind1.domain.Customer;
-import com.example.jparemind1.repository.CardRepository;
-import com.example.jparemind1.repository.CustomerRepository;
+import com.example.jparemind1.domain1.Card;
+import com.example.jparemind1.domain1.Customer;
+import com.example.jparemind1.repository1.CardRepository;
+import com.example.jparemind1.repository1.CustomerRepository;
 
 import jakarta.persistence.EntityManager;
 

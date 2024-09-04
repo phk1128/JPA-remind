@@ -5,10 +5,10 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
-import com.example.jparemind1.domain.Book;
-import com.example.jparemind1.domain.BookStore;
-import com.example.jparemind1.repository.BookRepository;
-import com.example.jparemind1.repository.BookStoreRepository;
+import com.example.jparemind1.domain1.Book;
+import com.example.jparemind1.domain1.BookStore;
+import com.example.jparemind1.repository1.BookRepository;
+import com.example.jparemind1.repository1.BookStoreRepository;
 
 import jakarta.persistence.EntityManager;
 

@@ -9,8 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
-import com.example.jparemind1.domain.MyEntity;
-import com.example.jparemind1.repository.MyEntityRepository;
+import com.example.jparemind1.domain1.MyEntity;
+import com.example.jparemind1.repository1.MyEntityRepository;
 
 import jakarta.persistence.EntityManager;
 

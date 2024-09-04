@@ -1,9 +1,9 @@
-package com.example.jparemind1.repository;
+package com.example.jparemind1.repository1;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.example.jparemind1.domain.Team;
+import com.example.jparemind1.domain1.Team;
 
 @Repository
 public interface TeamRepository extends JpaRepository<Team, Long> {

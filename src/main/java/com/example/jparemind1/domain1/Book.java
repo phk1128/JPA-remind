@@ -1,6 +1,7 @@
-package com.example.jparemind1.domain;
+package com.example.jparemind1.domain1;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -26,15 +27,16 @@ public class Book {
 
 	private String author;
 
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "book_store_id")
 	private BookStore bookStore;
 
 	@Builder
-	public Book(final Long id, final String title, final String author) {
+	public Book(final Long id, final String title, final String author, final BookStore bookStore) {
 		this.id = id;
 		this.title = title;
 		this.author = author;
+		this.bookStore = bookStore;
 	}
 
 }
